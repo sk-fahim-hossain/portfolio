@@ -76,7 +76,7 @@ export const navItems = [
       des: "Your go to solution for your business needs, right at your fingertips. Get started today.",
       img: "/project-2.png",
       iconLists: ["/webflow.svg", "/lottie.svg"],
-      link: "https://gallery-c3b8f3.webflow.io/",
+      link: "https://briogrow.webflow.io/",
     },
     {
       id: 2,

@@ -111,7 +111,7 @@ const Footer = () => {
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center sm:mb-4">
         <p className="md:text-base text-sm md:font-normal font-light">
-          Copyright © {currentYear} Fahim Hossain
+           {currentYear} developed by <span className="bg-black p-1">Fahim Hossain</span>
         </p>
 
         <div className="flex items-center md:gap-3 gap-6 z-30">
