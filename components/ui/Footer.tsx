@@ -51,20 +51,33 @@ const Footer = () => {
 
   const handleDownloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/resume.pdf';
-    link.download = 'resume.pdf';
+    link.href = '/Fahim Hossain Resume.pdf';
+    link.download = 'Fahim Hossain Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
+  
+  
+  // Using the link
+  
   const handleMail = () =>{
+    interface WindowOpenType {
+      type: 'mailto' | 'http' | 'https';
+      link: string;
+    }
     
-    console.log('click')
-    window.location.href = `mailto:fahimhossainjob1@gmail.com`;
+    const emailLink: WindowOpenType = {
+      type: 'https',
+      link: "https://www.linkedin.com/in/dev-fahim/"
+    };
 
-    
+
+    window.open(`${emailLink.link}`);
+    // window.open = (mailUrl)
   }
+    
 
   const stringYear = new Date()
   const currentYear = stringYear.getFullYear()
@@ -116,13 +129,13 @@ const Footer = () => {
 
         <div className="flex items-center md:gap-3 gap-6 z-30">
           {socialMedia.map((info, index) => (
-            <Link key={index} href={info.link} target="_blank" title={index === 1 ? 'Recently I am not on Twitter' : ''}>
+            <Link key={index} href={info.link} target="_blank" title={index === 1 ? 'Currently I am not on Twitter' : ''}>
 
               <div
                 key={info.id}
                 className=" w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
               >
-                {index === 1 ? <div className="" title="currently I am not on twitter"></div> : null}
+                {index === 1 ? <div className="" title="Currently I am not on twitter"></div> : null}
                 <img src={info.img} alt="icons" width={20} height={20} />
               </div>
 

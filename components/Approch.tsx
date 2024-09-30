@@ -40,6 +40,7 @@ export function Approach() {
                     <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
                 </Card>
                 <Card
+                    isHovered={true}
                     title="Development & Launch"
                     icon={<AceternityIcon order="Phase 3" />}
                     description="This is where the magic happens! Based on the approved design, I'll translate everything into functional code, building your website from the ground up."
@@ -60,13 +61,16 @@ const Card = ({
     icon,
     description,
     children,
+    isHovered
 }: {
     title: string;
     icon: React.ReactNode;
     description: string;
+    isHovered?: boolean;
     children?: React.ReactNode;
 }) => {
     const [hovered, setHovered] = React.useState(false);
+
     return (
         <div
             onMouseEnter={() => setHovered(true)}
@@ -88,6 +92,15 @@ const Card = ({
                         {children}
                     </motion.div>
                 )}
+                {
+                    isHovered && <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="h-full w-full absolute inset-0"
+                    >
+                        {children}
+                    </motion.div>
+                }
             </AnimatePresence>
 
             <div className="relative z-20">
