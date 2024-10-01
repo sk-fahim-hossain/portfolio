@@ -56,11 +56,7 @@ export const BentoGridItem = ({
 
   const skills = ['React.js', 'Next.js', 'ExpressJs', 'MongoDb', 'Redux', 'React Native Expo']
 
-  const chips = skills.map((item, index) => (
-    <div key={index} className=" p-5 lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]">
-      {item}
-    </div>
-  ))
+
 
 
    
@@ -116,7 +112,14 @@ export const BentoGridItem = ({
 
 
 
-              <Marquee direction="up" autoFill className="overflow-y-hidden" children={chips}>
+              <Marquee direction="up" autoFill className="overflow-y-hidden" >
+                {
+                  skills.map((item, index) => (
+                    <div key={index} className=" p-5 lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]">
+                      {item}
+                    </div>
+                  ))
+                }
               </Marquee>
 
 
