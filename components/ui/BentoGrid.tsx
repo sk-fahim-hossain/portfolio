@@ -5,6 +5,7 @@ import { BackgroundGradientAnimation } from "./GradientBg";
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
 import { useState } from "react";
+import Marquee from "react-fast-marquee";
 
 export const BentoGrid = ({
   className,
@@ -51,6 +52,18 @@ export const BentoGridItem = ({
     navigator.clipboard.writeText('sheikhfahimhossain1@gmail.com')
     setCopied(true)
   }
+
+
+  const skills = ['React.js', 'Next.js', 'ExpressJs', 'MongoDb', 'Redux', 'React Native Expo']
+
+  const chips = skills.map((item) => (
+    <div className=" p-5 lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]">
+      {item}
+    </div>
+  ))
+
+
+   
   return (
     <div
       className={cn(
@@ -91,42 +104,46 @@ export const BentoGridItem = ({
           </BackgroundGradientAnimation>
         )}
 
-        
+
 
 
         {id === 3 && (
-          <div className="flex gap-1 lg:gap-3 w-fit absolute -right-2">
-            <div className="flex flex-col gap-3 lg:gap-8">
-              <span className="py-4 lg:py-4 lg:px-3 text-sx px-3 lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center " />
+          <div className="flex gap-1 lg:gap-3 w-fit absolute -right-5">
+            <div className="flex flex-col gap-3 lg:gap-8 rotate-12">
 
-              {
+              {/* <span className="py-4 lg:py-4 lg:px-3 text-sx px-3 lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center " /> */}
 
-                ['React.js', 'Next.js'].map
-                  ((item) => (
-                    <span key={item} className="py-2 lg:py-4 text-gray-400 lg:px-3 text-sx px-3 lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]">
-                      {item}
-                    </span>
 
-                  ))
-              }
-            </div>
-            <div className="flex flex-col gap-3 lg:gap-8">
-              {
 
-                ['ExpressJs', 'MongoDb', 'Redux'].map
-                  ((item) => (
-                    <span key={item} className="py-2 text-gray-400 lg:py-4 lg:px-3 text-sx px-3 lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]">
-                      {item}
-                    </span>
 
-                  ))
-              }
-              <span className="py-3 lg:py-4 lg:px-3 text-sx px-3 lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]" />
+              <Marquee direction="up" autoFill className="overflow-y-hidden" children={chips}>
+              </Marquee>
+
+
+
+
+
+
+
+
+              {/* <div className="flex flex-col gap-3 lg:gap-8"> */}
+              {/* {
+
+                  ['ExpressJs', 'MongoDb', 'Redux'].map
+                    ((item) => (
+                      <span key={item} className="w-10 py-2 text-gray-400 lg:py-4 lg:px-3 text-sx px-3 lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]">
+                        {item}
+                      </span>
+
+                    ))
+                } */}
+              {/* <span className="py-3 lg:py-4 lg:px-3 text-sx px-3 lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]" /> */}
+              {/* </div> */}
             </div>
           </div>
         )}
 
-       
+
 
 
         <div className={cn(titleClassName, 'group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10')}>
@@ -147,10 +164,11 @@ export const BentoGridItem = ({
                   />
                 </div>
               </div>
+
             )}
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
