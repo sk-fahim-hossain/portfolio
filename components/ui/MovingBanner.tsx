@@ -7,7 +7,7 @@ const MovingBanner = () => {
         <Marquee className="my-8" gradient gradientColor="#000319" autoFill>
             {
                 skills.map( (item) =>(
-                        <div className="flex ml-7">
+                        <div key={item.id} className="flex ml-7">
                             <img className="aspect-square max-w-5" src={item.icon_link} alt={item.skill_name}  />
                             <p>{item.skill_name}</p>
                         </div>

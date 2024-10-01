@@ -130,12 +130,12 @@ export const navItems = [
 
   export const skills = [
     { id: 1, skill_name: 'React.js', icon_link : '/re.svg' },
-    { id: 3, skill_name: 'Next.js', icon_link : '/next.svg' },
-    { id: 4, skill_name: 'Typescript', icon_link : '/ts.svg' },
-    { id: 5, skill_name: 'Tailwind CSS', icon_link : '/tail.svg' },
-    { id: 6, skill_name: 'Node.js', icon_link : '/nodejs.svg' },
-    { id: 7, skill_name: 'Firebase', icon_link : '/firebase.svg' },
-    { id: 8, skill_name: 'MongoDb', icon_link : '/mongoDb.svg' },
-    { id: 9, skill_name: 'Framer Motion', icon_link : '/fm.svg' },
-    { id: 10, skill_name: 'Swiperjs', icon_link : '/swiperJs.svg' },
+    { id: 2, skill_name: 'Next.js', icon_link : '/next.svg' },
+    { id: 3, skill_name: 'Typescript', icon_link : '/ts.svg' },
+    { id: 4, skill_name: 'Tailwind CSS', icon_link : '/tail.svg' },
+    { id: 5, skill_name: 'Node.js', icon_link : '/nodejs.svg' },
+    { id: 6, skill_name: 'Firebase', icon_link : '/firebase.svg' },
+    { id: 7, skill_name: 'MongoDb', icon_link : '/mongoDb.svg' },
+    { id: 8, skill_name: 'Framer Motion', icon_link : '/fm.svg' },
+    { id: 9, skill_name: 'Swiperjs', icon_link : '/swiperJs.svg' },
   ]
