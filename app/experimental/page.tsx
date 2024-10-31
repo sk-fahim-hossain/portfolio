@@ -7,7 +7,7 @@ import { projects } from '@/Data';
 
 
 
-const page = () => {
+const AllProjects = () => {
     const [mousePosition, setMousePosition] = useState({
         x: 0,
         y: 0
@@ -208,4 +208,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default AllProjects;
