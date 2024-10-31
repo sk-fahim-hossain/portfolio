@@ -16,6 +16,7 @@ export const navItems = [
       img: "/b1.svg",
       spareImg: "",
     },
+    
     {
       id: 2,
       title: "I'm very flexible with time zone communications",
@@ -77,32 +78,45 @@ export const navItems = [
       img: "/project-2.png",
       iconLists: ["/webflow.svg", "/lottie.svg"],
       link: "https://briogrow.webflow.io/",
+      stack:"Webflow",
     },
     {
       id: 2,
+      title: "Kinjus - Artistic fashionable portfolio",
+      des: "Rediscover the hidden gems and iconic stars of the 1990s! Dive into your favorite cartoons, TV shows, music albums, and more with seamless filtering. With Immemorial, stay connected to all your 90s classics while taking a nostalgic journey back in time..",
+      img: "/kinjus.PNG",
+      iconLists: ["/re.svg", "/gsap.svg"],
+      link: "https://kinjus.netlify.app/",
+      stack:"Reactjs, Gsap, Styled Components",
+    },
+    {
+      id: 3,
       title: "Tralover - Travel Agency for travel lover",
       des: "A Travel Agency with the latest tech stack and elite design.",
       img: "/project-1.png",
       iconLists: ["/re.svg", "/bootsrap.svg",  "/swiperJs.svg", "/firebase.svg"],
       link: "https://tralover.netlify.app/",
+      stack:"Reactjs, Tailwind, Expressjs, MongoDb, Firebase",
     },
     {
-      id: 3,
+      id: 4,
       title: "Tmart A beautiful toyshop",
       des: "Explore the wonders of our ecommers system with this captivating many features.",
       img: "/project-3.png",
       iconLists: ["/re.svg", "/tail.svg","/swiperJs.svg", "/fm.svg", "/firebase.svg"],
       link: "https://tmarrt.netlify.app/",
+      stack:"Reactjs, Tailwind, Expressjs, MongoDb, Firebase",
     },
     
     
     {
-      id: 4,
+      id: 5,
       title: "Nextline -Book reader and knowledge lovers",
       des: "Created the Store on book website, combining Tailwindcss Lottie animations ",
       img: "/project-4.png",
       iconLists: ["/re.svg", "/tail.svg",  "/lottie.svg"],
       link: "https://nextlinee.netlify.app/",
+      stack:"Reactjs, Tailwind",
     },
   ];
   
@@ -138,4 +152,15 @@ export const navItems = [
     { id: 7, skill_name: 'MongoDb', icon_link : '/mongoDb.svg' },
     { id: 8, skill_name: 'Framer Motion', icon_link : '/fm.svg' },
     { id: 9, skill_name: 'Swiperjs', icon_link : '/swiperJs.svg' },
+    { id: 10, skill_name: 'Gsap', icon_link : '/gsap.svg' },
+    { id: 11, skill_name: 'Expressjs', icon_link : '/expressJs.svg' },
+    { id: 12, skill_name: 'Javascript', icon_link : '/javascript.svg' },
+    { id: 13, skill_name: 'Bootstrap', icon_link : '/bootstrap.svg' },
+    { id: 14, skill_name: 'Webflow', icon_link : '/webflow.svg' },
+    { id: 15, skill_name: 'Github', icon_link : '/git.svg' },
+    { id: 16, skill_name: 'Wordpress', icon_link : '/wordpress.svg' },
+    { id: 17, skill_name: 'Redux', icon_link : '/redux.svg' },
+    { id: 18, skill_name: 'React Native', icon_link : '/react-native.svg' },
+    { id: 19, skill_name: 'Material UI', icon_link : '/material-ui.svg' },
+    { id: 20, skill_name: 'Axios', icon_link : '/axios.svg' },
   ]
