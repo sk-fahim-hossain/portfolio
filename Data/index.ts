@@ -118,6 +118,24 @@ export const navItems = [
       link: "https://nextlinee.netlify.app/",
       stack:"Reactjs, Tailwind",
     },
+    {
+      id: 6,
+      title: "FontSwift - solution for your business needs",
+      des: "Your go to solution for your business needs, right at your fingertips. Get started today.",
+      img: "/wb-2.jpg",
+      iconLists: ["/webflow.svg", "/lottie.svg"],
+      link: "https://assignment-finsweet-c68c2c.webflow.io/",
+      stack:"Webflow",
+    },
+    {
+      id: 7,
+      title: "Fortunata - solution for your business website",
+      des: "Your go to solution for your business needs, right at your fingertips. Get started today.",
+      img: "/wb-3.jpg",
+      iconLists: ["/webflow.svg", "/lottie.svg"],
+      link: "https://live-text-assignment.webflow.io/",
+      stack:"Webflow",
+    },
   ];
   
   
@@ -140,6 +158,8 @@ export const navItems = [
       link: "https://www.linkedin.com/in/dev-fahim/"
     },
   ];
+
+
 
 
   export const skills = [

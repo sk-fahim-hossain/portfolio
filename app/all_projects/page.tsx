@@ -7,34 +7,9 @@ import { projects } from '@/Data';
 
 
 
+
 const AllProjects = () => {
-    const [mousePosition, setMousePosition] = useState({
-        x: 0,
-        y: 0
-    })
-
-
-    useEffect(() => {
-        const mouseMove = (e: any) => {
-            setMousePosition({
-                x: e.clientX,
-                y: e.clientY
-            })
-        }
-        window.addEventListener('mousemove', mouseMove)
-        return () => {
-            window.addEventListener('mousemove', mouseMove)
-        }
-    }, [])
-
-    const variants = {
-        default: {
-            x: mousePosition.x - 50 / 2,
-            y: mousePosition.y - 50 / 2,
-            backgroundColor: 'white'
-        },
-
-    }
+   
 
     const stackSection = ["Reactjs", "nextjs", "express", "Webflow"]
 
@@ -42,9 +17,8 @@ const AllProjects = () => {
 
 
     return (
-        <div className='bg-[#000319]'>
+        <div className='bg-[#000319] cursor' >
 
-            <motion.div variants={variants} animate='default' className='cursor z-50'></motion.div>
             <div>
                 <section id='projects' className="py-20">
                     <h1 className="heading text-white">

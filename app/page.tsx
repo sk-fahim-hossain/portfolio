@@ -29,9 +29,9 @@ export default function Home() {
 
 
         {/* <InfiniteMovingCardsDemo/> */}
-        <div className="flex justify-end">
-          <Link className="flex items-center" href='/experimental'>
-            <p className="mr-9 text-2xl flex gap-1">Discover  <span className="text-cyan-700">More</span></p>
+        <div className="flex justify-center">
+          <Link className="flex items-center" href='/all_projects'>
+            <p className="mr-9 text-2xl flex gap-1">See  <span className="text-cyan-700">More</span></p>
             <motion.div
               initial={{ x: 0 }}
               animate={{ x: 5 }}
