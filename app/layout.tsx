@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Homemade_Apple} from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import ClipboardPopup from "@/components/ClipboardPopup";
 
 const inter = Inter({ subsets: ["latin"] });
 const cadaville = Homemade_Apple({
@@ -35,6 +37,7 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
       </body>
+      <ClipboardPopup/>
     </html>
   );
 }
