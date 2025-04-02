@@ -112,10 +112,10 @@ export default function UploadPage() {
                     <div className="grid grid-cols-1 gap-4 mt-4">
                         {uploadingImages.map((img, index) => (
                             <div key={index} className="relative flex items-center gap-2">
-                                <img src={img.preview} alt="Uploading" className="w-32 h-32 object-cover rounded" />
-                                {img.link ? (
+                                <img src={img} alt="Uploading" className="w-32 h-32 object-cover rounded" />
+                                {img ? (
                                     <div className="flex flex-row gap-3 items-center ">
-                                        <p className="text-xs break-all cloudinaryLink">{img.link}</p>
+                                        <p className="text-xs break-all cloudinaryLink">{img}</p>
                                         <button
                                             onClick={() => handleCopyEvent()}
                                             className="bg-gray-700 text-white px-2 py-1 rounded text-xs mt-1"

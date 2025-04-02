@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { usePathname } from 'next/navigation';
 
-export function Sidebar({ activePage }) {
+export function Sidebar({ activePage}) {
+    const pathname = usePathname(); 
     return (
       <nav className="h-screen w-64 border-r border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-6 flex flex-col">
         <div className="mb-8">
@@ -11,7 +13,7 @@ export function Sidebar({ activePage }) {
           <Link 
             href="/admin/projects"
             className={`px-4 py-2 rounded-md font-inter text-sm transition-colors ${
-              activePage === 'projects' 
+                pathname.includes("projects") 
                 ? 'bg-gray-900 text-white dark:bg-gray-700'
                 : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
             }`}
@@ -23,7 +25,7 @@ export function Sidebar({ activePage }) {
           <Link 
             href="/admin/reviews"
             className={`px-4 py-2 rounded-md font-inter text-sm transition-colors ${
-              activePage === 'reviews' 
+                pathname.includes("reviews") 
                 ? 'bg-gray-900 text-white dark:bg-gray-700'
                 : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
             }`}
@@ -35,7 +37,7 @@ export function Sidebar({ activePage }) {
           <Link 
             href="/admin/skills"
             className={`px-4 py-2 rounded-md font-inter text-sm transition-colors ${
-              activePage === 'skills' 
+                pathname.includes("skills") 
                 ? 'bg-gray-900 text-white dark:bg-gray-700'
                 : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
             }`}
@@ -47,24 +49,25 @@ export function Sidebar({ activePage }) {
           <Link 
             href="/admin/upload"
             className={`px-4 py-2 rounded-md font-inter text-sm transition-colors ${
-              activePage === 'upload' 
+                pathname.includes("upload") 
                 ? 'bg-gray-900 text-white dark:bg-gray-700'
                 : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
             }`}
           >
-            {/* <i className="fas fa-code mr-2"></i> */}
+          
             <i className="fa-solid fa-upload mr-2"></i>
             Upload
           </Link>
+
           <Link 
             href="/admin/media"
             className={`px-4 py-2 rounded-md font-inter text-sm transition-colors ${
-              activePage === 'media' 
+                pathname.includes("media") 
                 ? 'bg-gray-900 text-white dark:bg-gray-700'
                 : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
             }`}
           >
-            {/* <i className="fas fa-code mr-2"></i> */}
+           
             <i className="fa-solid fa-photo-film mr-2"></i>
             Media
           </Link>
