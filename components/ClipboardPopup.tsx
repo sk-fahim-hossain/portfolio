@@ -1,29 +1,40 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export default function ClipboardPopup() {
+export default function ClipboardPopup(startKey) {
     const [clipboardItems, setClipboardItems] = useState<string[]>([]);
     const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
 
     // Load clipboard data from localStorage on component mount
     useEffect(() => {
-        const savedItems = JSON.parse(localStorage.getItem("clipboardItems") || "[]");
-        setClipboardItems(savedItems);
-    }, []);
+        const savedItems = JSON.parse(localStorage.getItem("clipboardItems"));
+        if(savedItems){
+            setClipboardItems(savedItems);
+        }else{
+            setClipboardItems([])
+        }
+    }, [startKey]);
 
-    // Update localStorage when clipboardItems change
-    useEffect(() => {
-        localStorage.setItem("clipboardItems", JSON.stringify(clipboardItems));
-    }, [clipboardItems]);
-
+    
     // Listen for clipboard changes and store the copied text
     useEffect(() => {
         const handleCopy = async () => {
             try {
                 const text = await navigator.clipboard.readText();
-                if (text && !clipboardItems.includes(text.trim())) {
+                const trimmedText = text.trim();
+    
+                if (trimmedText) {
                     setClipboardItems((prev) => {
-                        const updatedItems = [text.trim(), ...prev];
+                        // Prevent duplicates
+                        const alreadyExists = prev.some(item => item.text === trimmedText);
+                        if (alreadyExists) return prev;
+    
+                        const newItem = {
+                            id: prev.length + 1,
+                            text: trimmedText,
+                        };
+    
+                        const updatedItems = [newItem, ...prev];
                         localStorage.setItem("clipboardItems", JSON.stringify(updatedItems));
                         return updatedItems;
                     });
@@ -32,11 +43,13 @@ export default function ClipboardPopup() {
                 console.error("Clipboard read failed:", error);
             }
         };
-
+    
         document.addEventListener("copy", handleCopy);
-        return () => document.removeEventListener("copy", handleCopy);
-    }, [clipboardItems]);
-
+        return () => {
+            document.removeEventListener("copy", handleCopy);
+        };
+    }, []); // 👈 Empty dependency array to avoid re-runs
+    
     // Handle clicking copy button
     const handleCopyClick = async (text: string, index: number) => {
         try {
@@ -47,6 +60,7 @@ export default function ClipboardPopup() {
             console.error("Failed to copy:", error);
         }
     };
+    console.log() 
 
     // Handle deleting a clipboard item
     const handleDelete = (index: number) => {
@@ -60,40 +74,40 @@ export default function ClipboardPopup() {
     };
 
     return (
-        <div className="fixed bottom-4 right-4 w-80 space-y-3 z-50 overflow-y-auto">
+        <div className="fixed bottom-4 right-4 max-h-[50vh] w-80 space-y-3 z-50 overflow-y-auto">
             {clipboardItems.length === 0 && (
-                <div className="text-center text-gray-400 bg-white shadow-md rounded-lg p-3">
-                    Nothing copied yet
-                </div>
+                <>
+                   
+                </>
             )}
-            {clipboardItems.map((text, index) => (
+            {clipboardItems.map((item, index) => (
                 <div
                     key={index}
                     className="bg-white shadow-md rounded-lg p-3 flex flex-col justify-between items-center border dark:bg-cyan-900"
                 >
                     {/* Check if the text is an image URL */}
-                    {isValidImageUrl(text) ? (
+                    {isValidImageUrl(item.text) ? (
                         <>
                             <div className="w-[50px]">
                                 <img
-                                    src={text}
+                                    src={item.text}
                                     alt="Copied Image"
                                     className="w-full object-cover mb-2"
                                 />
                             </div>
                             <p className="w-full text-sm text-gray-900 dark:text-gray-200 break-words mb-2">
-                                {text}
+                                {item.text}
                             </p>
                         </>
                     ) : (
                         <p className="w-full text-sm text-gray-900 dark:text-gray-200 break-words mb-2">
-                            {text}
+                            {item.text}
                         </p>
                     )}
 
                     <div className="inline-flex ml-auto">
                         <button
-                            onClick={() => handleCopyClick(text, index)}
+                            onClick={() => handleCopyClick(item.text, index)}
                             className={`px-2 py-1 rounded-md transition ${copiedIndex === index
                                 ? "bg-green-500 text-white text-[10px]"
                                 : "bg-gray-200 text-gray-700 text-[10px] hover:bg-gray-300"

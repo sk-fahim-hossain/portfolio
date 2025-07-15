@@ -1,5 +1,5 @@
 "use client"
-import { Sidebar } from "@/components/SIdebar";
+import { Sidebar } from "@/components/Sidebar";
 import { useEffect, useState } from "react";
 
 export default function AdminPage() {
@@ -44,7 +44,7 @@ export default function AdminPage() {
   
     return (
       <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
-        <Sidebar activePage="" />
+        <Sidebar />
         
         <main className="flex-1 overflow-y-auto">
           <div className="p-8">

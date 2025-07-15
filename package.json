@@ -13,6 +13,7 @@
     "@react-three/drei": "^9.108.3",
     "@react-three/fiber": "^8.16.8",
     "@tabler/icons-react": "^3.6.0",
+    "@tawk.to/tawk-messenger-react": "^2.0.2",
     "axios": "^1.8.4",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.10",

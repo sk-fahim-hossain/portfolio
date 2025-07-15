@@ -1,7 +1,8 @@
 "use client"
+import ClipboardPopup from "@/components/ClipboardPopup";
 import { CrudTable } from "@/components/CrudTable";
 import { FormModal } from "@/components/FormModal";
-import { Sidebar } from "@/components/SIdebar";
+import { Sidebar } from "@/components/Sidebar";
 import { useEffect, useState } from "react";
 
 export default function SkillPage() {
@@ -11,6 +12,19 @@ export default function SkillPage() {
     const [editingProject, setEditingProject] = useState(null);
     const [error, setError] = useState(null);
     const [successMessage, setSuccessMessage] = useState('');
+    const [componentKey, setComponentKey] = useState(0);
+    
+    
+    
+      useEffect(() => {
+        const handleKeyUp = (e) => {
+          setComponentKey(prev => prev + 1)
+        };
+        window.addEventListener("keyup", handleKeyUp);
+        return () => {
+          window.removeEventListener("keyup", handleKeyUp);
+        };
+      }, []);
   
     const columns = [
       { header: 'Title', key: 'title' },
@@ -110,7 +124,7 @@ export default function SkillPage() {
   
     return (
       <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
-        <Sidebar activePage="skills" />
+        <Sidebar  />
         
         <div className="flex-1 p-8 overflow-auto">
           <div className="mb-8 flex justify-between items-center">
@@ -158,6 +172,7 @@ export default function SkillPage() {
             errorMessage={error}
           />
         </div>
+        <ClipboardPopup startKey={componentKey} />
       </div>
     );
   }

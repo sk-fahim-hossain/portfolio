@@ -1,12 +1,26 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Sidebar } from "@/components/SIdebar";
+import { Sidebar } from "@/components/Sidebar";
+import ClipboardPopup from "@/components/ClipboardPopup";
 
 export default function MediaPage() {
 
     const [images, setImages] = useState([]);
     const [copiedUrl, setCopiedUrl] = useState("");
-    const [isLoading,setIsloading] = useState(true);
+    const [isLoading, setIsloading] = useState(true);
+    const [componentKey, setComponentKey] = useState(0);
+    
+    
+    
+      useEffect(() => {
+        const handleKeyUp = (e) => {
+          setComponentKey(prev => prev + 1)
+        };
+        window.addEventListener("keyup", handleKeyUp);
+        return () => {
+          window.removeEventListener("keyup", handleKeyUp);
+        };
+      }, []);
 
     useEffect(() => {
         // Replace with an actual API to fetch images
@@ -14,11 +28,11 @@ export default function MediaPage() {
             const response = await fetch("http://localhost:4000/api/images");
             const data = await response.json();
             const { imageUrls } = data;
-            if(imageUrls){
+            if (imageUrls) {
                 setImages(imageUrls);
                 setIsloading(false)
             }
-            
+
         };
         fetchImages();
     }, []);
@@ -31,24 +45,24 @@ export default function MediaPage() {
         }, 2000);
     };
 
-    const extractPublicId = (url) => {
+    const extractPublicId = (url: any) => {
         return url.split('/').slice(-1)[0].split('.')[0];
     };
-    const handleDelete = async (image) => {
+    const handleDelete = async (image: any) => {
         if (!image) return;
-    
+
         const publicId = extractPublicId(image);
-    
+
         const confirmed = window.confirm("Are you sure you want to delete this image?");
         if (!confirmed) return;
-    
+
         try {
             const response = await fetch("http://localhost:4000/api/delete-image", {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ publicId }),
             });
-    
+
             console.log(response)
             const data = await response.json();
             if (response.ok) {
@@ -64,12 +78,12 @@ export default function MediaPage() {
             alert("Failed to delete the image.");
         }
     };
-    
+
 
 
     return (
         <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
-            <Sidebar activePage="skills" />
+            <Sidebar />
 
             <div className="flex-1 p-8 overflow-auto">
                 <div className="mb-8 flex justify-between items-center">
@@ -78,18 +92,22 @@ export default function MediaPage() {
                     </h1>
                 </div>
                 <div className="min-h-screen  p-8">
-                    <h1 className="text-3xl font-bold text-center mb-8">Image Gallery</h1>
-
+                    <div className="flex justify-between"><h1 className="text-3xl font-bold text-center mb-8">Image Gallery</h1>
+                        <h1 className="text-3xl font-bold  mb-8 "> <i>{images?.length? images.length:0} Images</i></h1>
+                    </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                        { isLoading ? <p className="text-3xl">Loading..</p>:""}
-                        {images ? images?.map((image: any) => (
+                        {isLoading ? <p className="text-3xl">Loading..</p> : ""}
+                        {images ? images?.map((image: any) => 
+                        
+                        
+                        (
                             <div key={image.id} className="relative group">
                                 {/* Image Card */}
-                                <div className="relative w-full h-64 bg-gray-200 rounded-lg overflow-hidden shadow-md">
+                                <div className="relative aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg overflow-hidden shadow-md">
                                     <img
                                         src={image}
                                         alt={image}
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-full object-contain"
                                     />
 
                                     {/* Floating Copy Icon */}
@@ -128,7 +146,7 @@ export default function MediaPage() {
                 </div>
 
 
-
+ <ClipboardPopup startKey={componentKey} />
             </div>
         </div>
     );

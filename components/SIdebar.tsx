@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
 
-export function Sidebar({ activePage }) {
+export function Sidebar() {
     const pathname = usePathname();
     return (
         <nav className="h-screen w-64 border-r border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-6 flex flex-col">

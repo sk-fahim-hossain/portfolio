@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
       <div className="max-w-7xl w-full">
-        <FloatingNav navItems={navItems}></FloatingNav>
+        {/* <FloatingNav navItems={navItems}></FloatingNav> */}
         <Hero />
         <div>
           <MovingBanner />
@@ -30,7 +30,7 @@ export default function Home() {
 
         {/* <InfiniteMovingCardsDemo/> */}
         <div className="flex justify-center">
-          <Link className="flex items-center" href='/all_projects'>
+          <Link className="flex items-center border-2 border-transparent px-3 py-2 hover:px-3 hover:py-2 hover:bg-black-300 hover:border-white-300 hover:border-2 hover:rounded-md" href='/all_projects'>
             <p className="mr-9 text-2xl flex gap-1">See  <span className="text-cyan-700">More</span></p>
             <motion.div
               initial={{ x: 0 }}

@@ -1,37 +1,43 @@
 "use client"
 import { skills } from '@/Data';
 import Image from 'next/image';
-import React, {  useEffect, useRef, useState } from 'react';
-import { motion } from 'framer-motion'
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, useMotionValue, useTransform } from 'framer-motion'
 const Skills = () => {
     const constraintsRef = useRef(null);
 
     const [isReload, setIsReload] = useState(1)
-   
-    const reloadHandle = ()=>{
+
+    const reloadHandle = () => {
         setIsReload(isReload + 1)
         console.log('click')
     }
-    
+
     // useEffect(()=>{
     //     const el = constraintsRef.current
     //     el.
     // },[isReload ])
+
+
+
+
+
     return (
-        <div  className='mx-auto py-20'>
+        <div className='mx-auto py-20'>
             <h1 className="heading">
                 My{" "}
                 <span className="text-purple">Skills</span>
             </h1>
 
             <motion.div ref={constraintsRef} className='flex gap-4 flex-wrap justify-center border-3  items-center w-full mx-auto mt-8'>
-                {  
+                {
                     skills?.map(item => (
                         <motion.div
                             drag
-                            dragConstraints={constraintsRef}
-                            dragElastic={0.2}
-                            dragPropagation 
+                            dragDirectionLock
+                            dragConstraints={{ top: 0, right: 0, bottom: 0, left: 0 }}
+                            dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+                            dragElastic={0.5}
                             key={item.id}
                             className="flex cursor-move items-center space-x-1 px-4 py-1 border-2 rounded-full shadow-md min-w-fit"
                         >

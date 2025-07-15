@@ -1,4 +1,4 @@
-export function CrudTable({ 
+export function CrudTable({
     columns = [],
     data = [],
     onEdit = () => { },
@@ -14,7 +14,7 @@ export function CrudTable({
                         {columns.map((column, index) => (
                             <th
                                 key={index}
-                                className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider font-inter"
+                                className="ps-3 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider font-inter"
                             >
                                 {column.header}
                             </th>
@@ -53,10 +53,10 @@ export function CrudTable({
                                 {columns.map((column, colIndex) => (
                                     <td
                                         key={colIndex}
-                                        className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-300 font-inter"
+                                        className=" max-w-[200px] ps-3 py-3  word-breaks text-sm text-gray-900 dark:text-gray-300 font-inter "
                                     >
                                         {column.key === 'img' || column.key === 'iconLists' ? (
-                                            <div className="flex space-x-2">
+                                            <div className="flex space-x-2 min-w-[200px] ">
                                                 {(row[column.key] ? row[column.key].split(',') : []).map((imgSrc, index) => (
                                                     <img key={index} src={imgSrc.trim()} alt="Image" className="w-16 h-16 object-cover rounded" />
                                                 ))}
@@ -67,13 +67,21 @@ export function CrudTable({
                                             </a>
                                         ) : column.key === 'tech-stack' ? (
                                             row[column.key].split(',').map((tech, index) => (
-                                                <span key={index} className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-2 py-1 rounded mr-1 text-xs">
+                                                <div key={index} className="bg-gray-200 font-bold inline-block dark:bg-gray-100 text-gray-800 dark:text-violet-600 px-2 py-1 rounded mr-1 text-xs mb-1">
                                                     {tech.trim()}
-                                                </span>
+                                                </div>
                                             ))
-                                        ) : (
-                                            row[column.key]
-                                        )}
+
+                                        ) : column.key === 'des' ? (
+
+                                            <p className="min-w-[200px] whitespace-normal  max-w-[200px] dark:text-gray-300 px-2 py-1 rounded mr-1 text-xs break-words">
+                                                {row[column.key]}
+                                            </p>
+                                        )
+
+                                            : (
+                                                <div className="">{row[column.key]}</div>
+                                            )}
                                     </td>
                                 ))}
                                 <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
