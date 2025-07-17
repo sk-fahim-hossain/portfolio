@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { FaLocationArrow } from 'react-icons/fa6';
 import { PinContainer } from '@/components/ui/3d-pin';
 import { projects } from '@/Data';
+import Footer from '@/components/ui/Footer';
 
 
 
@@ -13,12 +14,10 @@ const AllProjects = () => {
     const stackSection = ["Reactjs", "nextjs", "express", "Webflow"]
 
 
-
-
     return (
-        <div className='bg-[#000319] cursor' >
+        <div className='' >
 
-            <div className="md:pt-[100px] lg:pt-[100px]">
+            <div className="md:pt-[100px] pt-[60px] lg:pt-[100px]">
                 <section id='projects' className="py-20">
                     <h1 className="heading text-white">
                         Innovation Through {" "}
@@ -31,8 +30,8 @@ const AllProjects = () => {
                             initial={{ opacity: 0 }}
                             transition={{ duration: 0.4 }}
                             animate={{ y: 40, opacity: 1 }}
-                            className='flex-shrink w-full'>
-                            <h3 className='text-7xl text-white text-center ruthie -rotate-3'><span className="before:block  pointer-events-none before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-400 relative inline-block">
+                            className='flex-shrink w-full mb-[60px] md:mb-[100px]'>
+                            <h3 className='text-5xl sm:text-6xl md:text-6xl lg:text-7xl text-white text-center ruthie -rotate-3'><span className="before:block  pointer-events-none before:absolute before:-inset-1 before:-skew-y-3 before:border-blue-500 before:border-2 before:border-dashed relative inline-block">
                                 <span className="relative text-white ">Custome Coded</span>
                             </span></h3>
                         </motion.div>
@@ -189,6 +188,7 @@ const AllProjects = () => {
                     </div>
                 </section>
             </div>
+            <Footer />
         </div>
     );
 };

@@ -86,10 +86,6 @@ const Footer = () => {
 
 
       <div className="flex flex-col items-center">
-        {/* <h1 className="heading lg:max-w-[45vw]">
-          Ready to take <span className="text-purple">your</span> digital
-          presence to the next level?
-        </h1> */}
         <TypewriterEffect words={words}></TypewriterEffect>
         <p className="text-white-200 md:mt-10 my-5 text-center">
           Reach out to me today and let&apos;s discuss how I can help you
@@ -123,7 +119,7 @@ const Footer = () => {
 
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center sm:mb-4">
-        <p className="md:text-base text-sm md:font-normal font-light">
+        <p className="md:text-base text-sm md:font-normal font-light mb-[30px]">
            {currentYear} developed by <span className="bg-black p-1">Fahim Hossain</span>
         </p>
 

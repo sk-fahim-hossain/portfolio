@@ -42,6 +42,8 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
 
+
+{/* Tawkto Messenger  */}
         <Script id="tawkto-script" strategy="afterInteractive">
           {`
           var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
