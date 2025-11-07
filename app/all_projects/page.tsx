@@ -4,13 +4,14 @@ import { FaLocationArrow } from 'react-icons/fa6';
 import { PinContainer } from '@/components/ui/3d-pin';
 import { projects } from '@/Data';
 import Footer from '@/components/ui/Footer';
+import Image from 'next/image';
 
 
 
 
 const AllProjects = () => {
 
-
+    // all the stack im working with..
     const stackSection = ["Reactjs", "nextjs", "express", "Webflow"]
 
 
@@ -31,10 +32,13 @@ const AllProjects = () => {
                             transition={{ duration: 0.4 }}
                             animate={{ y: 40, opacity: 1 }}
                             className='flex-shrink w-full mb-[60px] md:mb-[100px]'>
-                            <h3 className='text-5xl sm:text-6xl md:text-6xl lg:text-7xl text-white text-center ruthie -rotate-3'><span className="before:block  pointer-events-none before:absolute before:-inset-1 before:-skew-y-3 before:border-blue-500 before:border-2 before:border-dashed relative inline-block">
-                                <span className="relative text-white ">Custome Coded</span>
-                            </span></h3>
+                            <h3 className='text-5xl sm:text-6xl md:text-6xl lg:text-7xl text-white text-center ruthie -rotate-3'>
+                                <span className="before:block  pointer-events-none before:absolute before:-inset-1 before:-skew-y-3 before:border-blue-500 before:border-2 before:border-dashed relative inline-block">
+                                    <span className="relative text-white ">Custome Coded</span>
+                                </span>
+                            </h3>
                         </motion.div>
+
                         {projects.filter(item => item.stack.includes(stackSection[0])).map((item, index) => (
                             <div
                                 className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
@@ -49,12 +53,14 @@ const AllProjects = () => {
                                             className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                                             style={{ backgroundColor: "#000319" }}
                                         >
-                                            <img src="/bg.png" alt="bgimg" />
+                                            <Image width={384} height={229} src="/bg.png" alt="bgimg" className='object-cover' />
                                         </div>
-                                        <img
+                                        <Image
+                                        width={384}
+                                        height={229}
                                             src={item.img}
                                             alt="cover"
-                                            className="z-10 absolute bottom-0"
+                                            className="z-10 absolute object-fill h-full w-full rounded-md"
                                         />
                                     </div>
 
@@ -82,7 +88,7 @@ const AllProjects = () => {
                                                         transform: `translateX(-${5 * index + 2}px)`,
                                                     }}
                                                 >
-                                                    <img src={icon} alt="icon5" className="p-2" />
+                                                    <Image width={38} height={38} src={icon} alt="icon5" className="p-2" />
                                                 </div>
                                             ))}
                                         </div>
@@ -137,12 +143,14 @@ const AllProjects = () => {
                                             className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                                             style={{ backgroundColor: "#13162D" }}
                                         >
-                                            <img src="/bg.png" alt="bgimg" />
+                                            <Image width={384} height={229} src="/bg.png" alt="bgimg" />
                                         </div>
-                                        <img
+                                        <Image
+                                        width={384}
+                                        height={229}
                                             src={item.img}
                                             alt="cover"
-                                            className="z-10 absolute bottom-0"
+                                            className="z-10 absolute object-fill h-full w-full rounded-md"
                                         />
                                     </div>
 
@@ -170,7 +178,7 @@ const AllProjects = () => {
                                                         transform: `translateX(-${5 * index + 2}px)`,
                                                     }}
                                                 >
-                                                    <img src={icon} alt="icon5" className="p-2" />
+                                                    <Image width={38} height={38} src={icon} alt="icon5" className="p-2" />
                                                 </div>
                                             ))}
                                         </div>

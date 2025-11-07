@@ -30,7 +30,7 @@ const Hero = () => {
 
             <div className='flex justify-center relative my-20 z-10'>
                 <div className='max-w-[89vw] md:max-w-4xl lg:max-w-[60vh] flex flex-col items-center justify-center'>
-                    <h1 className='uppercase tracking-widest text-xs text-center text-blue-100 max-w-80'>Dynamic Web Magic With Nextjs</h1>
+                    <h1 className='uppercase tracking-widest text-xs text-center text-blue-100 max-w-80'>Fluid Across Stacks. Focused on Impact</h1>
                     <TextGenerateEffect className='text-center text-[37px] md:text-4xl lg:text-6xl' words='Transforming Concepts into seamless Experiences'></TextGenerateEffect>
                     <p className='tracking-wider text-center mb-4 text-sm md:text-lg lg:text-2xl'>Hi ,I am Fahim, a Nextjs Developer based on Bangladesh</p>
 
