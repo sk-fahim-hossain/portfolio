@@ -7,6 +7,7 @@ import { BackgroundBeams } from "./BackgroundBeams";
 import { TypewriterEffect } from "./TypewritterEffect";
 import Link from "next/link";
 import { LiaFileDownloadSolid } from "react-icons/lia";
+import Image from "next/image";
 
 
 const Footer = () => {
@@ -123,16 +124,16 @@ const Footer = () => {
            {currentYear} developed by <span className="bg-black p-1">Fahim Hossain</span>
         </p>
 
-        <div className="flex items-center md:gap-3 gap-6 z-30">
+        <div className="flex items-center md:gap-3 gap-6 z-30 pb-[100px]">
           {socialMedia.map((info, index) => (
-            <Link key={index} href={info.link} target="_blank" title={index === 1 ? 'Currently I am not on Twitter' : ''}>
+            <Link key={index} href={info.link} target="_blank" title={index === 1 ? 'Currently I am not on Twitter' : ''} className="hover:scale-125 transition-all ease-in-out hover:shadow-[0_0_20px_#065ed1] duration-800 rounded-md">
 
               <div
                 key={info.id}
                 className=" w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
               >
                 {index === 1 ? <div className="" title="Currently I am not on twitter"></div> : null}
-                <img src={info.img} alt="icons" width={20} height={20} />
+                <Image src={info?.img} alt="icons" width={20} height={20} />
               </div>
 
             </Link>

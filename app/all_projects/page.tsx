@@ -34,7 +34,7 @@ const AllProjects = () => {
                             className='flex-shrink w-full mb-[60px] md:mb-[100px]'>
                             <h3 className='text-5xl sm:text-6xl md:text-6xl lg:text-7xl text-white text-center ruthie -rotate-3'>
                                 <span className="before:block  pointer-events-none before:absolute before:-inset-1 before:-skew-y-3 before:border-blue-500 before:border-2 before:border-dashed relative inline-block">
-                                    <span className="relative text-white ">Custome Coded</span>
+                                    <span className="relative text-white ">Custom Projects</span>
                                 </span>
                             </h3>
                         </motion.div>

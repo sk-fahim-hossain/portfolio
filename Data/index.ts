@@ -2,7 +2,7 @@ export const navItems = [
     { name: "Home", link: "/" },
     { name: "About", link: "#about" },
     { name: "Projects", link: "/all_projects" },
-    { name: "Contact", link: "#contact" },
+    { name: "Contact", link: "/contact" },
   ];
   
   export const gridItems = [
@@ -149,8 +149,8 @@ export const navItems = [
     },
     {
       id: 2,
-      img: "/twit.svg",
-      link :"#"
+      img: "/webflow.svg",
+      link :"https://webflow.com/@devfahim"
     },
     {
       id: 3,
