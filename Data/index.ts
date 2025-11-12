@@ -136,6 +136,33 @@ export const navItems = [
       link: "https://live-text-assignment.webflow.io/",
       stack:"Webflow",
     },
+    {
+      id: 8,
+      title: "Join Kiro – A Modern Career Networking Platform",
+      des: "Connecting talent and opportunity in one seamless platform. Join the movement",
+      img: "/project8.png",
+      iconLists: ["/webflow.svg", "/lottie.svg"],
+      link: "https://www.joinkiro.com/",
+      stack:"Webflow",
+    },
+    {
+      id: 9,
+      title: "Slice Clubhouse – Golf Simulator & Social Hub",
+      des: "An indoor golf simulator bar reinventing social sport, drinks, and fun for all enthusiasts",
+      img: "/p9.png",
+      iconLists: ["/webflow.svg", "/lottie.svg"],
+      link: "https://slice-clubhouse-ofc.webflow.io/",
+      stack:"Webflow",
+    },
+    {
+      id: 10,
+      title: "Netglass Totalfasade – Premium Glass & Aluminium Façade Solutions",
+      des: "Delivering high-quality glass façades, aluminium systems, sun-screening and balcony railings across Northern Norway.",
+      img: "/p10.png",
+      iconLists: ["/webflow.svg", "/lottie.svg"],
+      link: "https://testglass.webflow.io",
+      stack:"Webflow",
+    },
   ];
   
   
