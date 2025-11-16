@@ -15,7 +15,7 @@ export default function MediaPage() {
                     </h1>
                 </div>
                 <div className="min-h-screen  p-8">
-                    <h2>This is the body of the media page</h2>
+                    <h2>This is the body of the media page where i can upload the media</h2>
                 </div>
             </div>
         </div>
