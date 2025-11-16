@@ -28,7 +28,7 @@ export default function SkillPage() {
 
   return (
     <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
-      <Sidebar activePage="projects" />
+      <Sidebar />
 
       <div className="flex-1 p-8 overflow-auto">
       </div>
