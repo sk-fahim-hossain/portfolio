@@ -1,9 +1,8 @@
 "use client"
-import ClipboardPopup from "@/components/ClipboardPopup";
-import { CrudTable } from "@/components/CrudTable";
-import { FormModal } from "@/components/FormModal";
-import { SideNav } from "@/components/SideNav";
+
 import { useEffect, useState } from "react";
+
+
 
 export default function SkillPage() {
 
@@ -28,7 +27,6 @@ export default function SkillPage() {
 
   return (
     <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
-      <SideNav />
       <div className="flex-1 p-8 overflow-auto">
       </div>
     </div>

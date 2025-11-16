@@ -1,16 +1,12 @@
 "use client"
 
-import { SideNav } from "@/components/SideNav"
-
-
-
 
 
 export default function MediaPage() {
 
     return (
         <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
-            <SideNav />
+           
 
             <div className="flex-1 p-8 overflow-auto">
                 <div className="mb-8 flex justify-between items-center">

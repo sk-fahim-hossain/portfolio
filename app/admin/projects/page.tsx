@@ -1,4 +1,4 @@
-import { SideNav } from "@/components/SideNav";
+
 
 
 
@@ -33,7 +33,7 @@ export default function ProjectPage() {
 
   return (
     <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
-      <SideNav />
+
 
       <div className="flex-1 p-4 overflow-auto">
         {/* Header */}
