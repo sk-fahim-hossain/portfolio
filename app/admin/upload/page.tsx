@@ -1,9 +1,6 @@
 "use client"
 
 
-
-
-
 export default function UploadPage() {
     
     return (
