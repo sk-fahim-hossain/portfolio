@@ -1,12 +1,14 @@
 "use client"
-import { Sidebar } from "@/components/Sidebar";
+
+import { SideNav } from "@/components/SideNav";
+
 
 
 export default function UploadPage() {
     
     return (
         <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
-            <Sidebar />
+            <SideNav />
 
             <div className="flex-1 p-8 overflow-auto ">
                 <div className="mb-8 flex justify-between items-center ">
